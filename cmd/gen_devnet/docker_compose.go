@@ -53,7 +53,9 @@ services:
       - "{{ .PortExpose1 }}:26656"
       - "{{ .PortExpose2 }}:26657"
     volumes:
-      - ./node{{ .Index }}:/data:Z
+      - ./node{{ .Index }}/testnodecli:/data/testnodecli:rw
+      - ./node{{ .Index }}/testnoded/config:/data/testnoded/config:ro
+      - ./node{{ .Index }}/testnoded/data:/data/testnoded/data:rw
     networks:
       localnet:
         ipv4_address: 172.20.0.{{ .PortIP }}
