@@ -84,6 +84,7 @@ build:
 ifeq ($(OS),Windows_NT)
 	$(call buildwindows)
 else
+	env CGO_ENABLED=0
 	go build $(BUILD_CLI_FLAGS) -o build/bnbcli ./cmd/bnbcli
 	go build $(BUILD_TESTNET_FLAGS) -o build/tbnbcli ./cmd/bnbcli
 	go build $(BUILD_FLAGS) -o build/bnbchaind ./cmd/bnbchaind
