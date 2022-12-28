@@ -51,6 +51,13 @@ jobs:
 #        uses: mxschmitt/action-tmate@v3
 
       - name: Build Binary for ${{matrix.os}}
+        if: matrix.os == 'ubuntu-latest'
+        env:
+          CGO_ENABLED: "0"
+        run: make build
+
+      - name: Build Binary for ${{matrix.os}}
+        if: matrix.os != 'ubuntu-latest'
         run: make build
 
       # ==============================
