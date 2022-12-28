@@ -1,3 +1,6 @@
+//go:build exclude
+// +build exclude
+
 package app_test
 
 import (

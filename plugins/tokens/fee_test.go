@@ -1,3 +1,6 @@
+//go:build exclude
+// +build exclude
+
 package tokens_test
 
 import (
