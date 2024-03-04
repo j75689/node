@@ -1269,3 +1269,7 @@ func (app *BNBBeaconChain) publish(tradesToPublish []*pub.Trade, proposalsToPubl
 
 	pub.Logger.Debug("finish publish", "height", height)
 }
+
+func (app *BNBBeaconChain) GetStakeKeeper() *stake.Keeper {
+	return &app.stakeKeeper
+}
